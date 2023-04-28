@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="viewmodel"
+            type="com.jesuitasrioja.android_entrega11.viewModel.MoviesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
