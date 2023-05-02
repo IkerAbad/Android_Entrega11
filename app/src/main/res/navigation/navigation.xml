@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/search_movies"
-        android:name="com.jesuitasrioja.android_entrega11.search_movies"
+        android:name="com.jesuitasrioja.android_entrega11.ui.search_movies"
         android:label="fragment_search_movies"
         tools:layout="@layout/fragment_search_movies" >
         <action

@@ -11,10 +11,10 @@ data class Movie (
         if (this === other) return true
         if (other == null || javaClass != other.javaClass) return false
 
-        val otraPelicula = other as Movie
+        val secondaryMovie = other as Movie
 
-        if (id != otraPelicula.id) return false
-        if (image != otraPelicula.image) return false
+        if (id != secondaryMovie.id) return false
+        if (image != secondaryMovie.image) return false
 
         return true
     }

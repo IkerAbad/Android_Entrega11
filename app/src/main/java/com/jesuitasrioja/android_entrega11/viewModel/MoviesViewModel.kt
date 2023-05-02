@@ -5,6 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jesuitasrioja.android_entrega11.model.Movie
+import com.jesuitasrioja.android_entrega11.services.ApiMoshi
 import kotlinx.coroutines.launch
 
 class MoviesViewModel : ViewModel(){
@@ -14,21 +16,21 @@ class MoviesViewModel : ViewModel(){
         get() = _response
 
     val imgSrcUrl: String
-        get() = movieSelected.image.toString()
+        get() = selectedMovie.image.toString()
 
-    lateinit var movieSelected :Movie
+    lateinit var selectedMovie :Movie
 
 
-    fun getPeliculas(parametro:String){
+    fun getMovies(parameter:String){
         viewModelScope.launch {
             try {
-                _response.value=ApiMoshi.retrofitMoshiService.getImageRandom(parametro).results
+                _response.value= ApiMoshi.retrofitMoshiService.getImageRandom(parameter).results
             }catch (e:java.lang.Exception){
                 Log.d("error",e.message!!)
             }
         }
     }
-    fun changeSelected (pelicula: Movie){
-        movieSelected=pelicula
+    fun changeSelected (movie: Movie){
+        selectedMovie=movie
     }
 }
