@@ -16,7 +16,7 @@ class MoviesViewModel : ViewModel(){
         get() = _response
 
     val imgSrcUrl: String
-        get() = selectedMovie.image.toString()
+        get() = selectedMovie.image
 
     lateinit var selectedMovie :Movie
 
