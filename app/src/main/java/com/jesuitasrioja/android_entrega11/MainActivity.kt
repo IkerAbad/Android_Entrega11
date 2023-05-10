@@ -15,12 +15,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(
-            this, R.layout.activity_main
-        )
 
-        //TOOLBAR
-        setSupportActionBar(binding.toolbar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //Cambiar texto navbar dependiendo del fragment
         //NavController
@@ -31,8 +28,11 @@ class MainActivity : AppCompatActivity() {
         //appBarConfiguration
         val appBarConfiguration = AppBarConfiguration(navController.graph)
 
+        //TOOLBAR
+        //setSupportActionBar(binding.toolbar)
+
         //Toolbar a Navigation
-        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+        //binding.toolbar.setupWithNavController(navController, appBarConfiguration)
 
     }
 }
